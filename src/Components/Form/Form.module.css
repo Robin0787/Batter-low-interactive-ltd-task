@@ -1,0 +1,40 @@
+.inputField {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #057caf;
+  background: transparent;
+  border-radius: 5px;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1em;
+  transition: ease 0.3s;
+  letter-spacing: 1px;
+}
+.inputTitle {
+  position: absolute;
+  left: 0;
+  padding: 12px;
+  pointer-events: none;
+  font-size: 1em;
+  color: #057caf;
+  text-transform: uppercase;
+  transition: 0.3s;
+  border: 0;
+}
+
+.inputField:valid ~ .inputTitle,
+.inputField:focus ~ .inputTitle {
+  color: #5acbfc;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.8em;
+  padding: 0 12px;
+  background: black;
+  border-left: 1px solid #5acbfc;
+  border-right: 1px solid #5acbfc;
+  letter-spacing: 2px;
+}
+
+.inputField:valid,
+.inputField:focus {
+  border: 1px solid #5acbfc;
+}
