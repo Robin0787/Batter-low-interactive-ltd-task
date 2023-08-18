@@ -23,7 +23,8 @@
 }
 
 .inputField:valid ~ .inputTitle,
-.inputField:focus ~ .inputTitle {
+.inputField:focus ~ .inputTitle,
+.inputField:disabled ~ .inputTitle {
   color: #5acbfc;
   transform: translateX(10px) translateY(-7px);
   font-size: 0.8em;
@@ -37,4 +38,8 @@
 .inputField:valid,
 .inputField:focus {
   border: 1px solid #5acbfc;
+}
+
+.inputField:disabled {
+  cursor: not-allowed;
 }
