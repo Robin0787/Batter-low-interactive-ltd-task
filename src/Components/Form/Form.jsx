@@ -2,13 +2,15 @@
 import Papa from "papaparse";
 import { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from "react-router-dom";
 import { infoContext } from "../../Pages/Provider/Provider";
 import pattern from '../../assets/pattern.svg';
 import styles from "./Form.module.css";
 
 const Form = ({ twoStep, setTwoStep }) => {
-    const [uploadButtonText, setUploadButtonText] = useState('CSV (MAX. 800x400px)');
+    const [uploadButtonText, setUploadButtonText] = useState('Only CSV file accepted.');
     const {allInfo, dispatch} = useContext(infoContext);
+    const navigate = useNavigate();
 
     // Event Listener for the next button
     function handleNext () {
@@ -68,6 +70,7 @@ const Form = ({ twoStep, setTwoStep }) => {
         })
     };
 
+
     function handleSeeResult () {
         if(!allInfo.maxX) {
             toast.error('MAX_X is required');
@@ -90,17 +93,18 @@ const Form = ({ twoStep, setTwoStep }) => {
         else {
             toast.success('Everything is ok');
             localStorage.setItem('allInfo', JSON.stringify(allInfo));
+            navigate('/result');
         }
     }
 
     return (
-        <section className={`${twoStep ? "w-full" : "w-full md:w-2/3 lg:w-1/2"} h-full duration-500  rounded-xl`} style={{ backgroundImage: `url(${pattern})` }}>
-            <section className={` overflow-hidden bg-black bg-opacity-50 h-full rounded-xl ring-2 ring-[#38bdf830] p-5 pt-5 sm:p-10 md:p-10 lg:p-10 lg:pt-7`}>
-                <div className='mb-5'>
-                    <h1 className='text-center text-[#5acbfc] text-3xl leading-[40px] font-thin uppercase whitespace-nowrap'>Project Information</h1>
+        <section className={`${twoStep ? "w-full" : "w-full md:w-2/3 lg:w-1/2 md:py-5"} h-full duration-500 `} style={{ backgroundImage: `url(${pattern})` }}>
+            <section className={`overflow-hidden bg-black bg-opacity-50 h-full rounded-xl ring-2 ring-[#38bdf830] py-10 px-6 sm:p-10 md:p-10 lg:p-10`}>
+                <div className='mb-10 lg:mb-14 mt-5'>
+                    <h1 className='text-center text-[#5acbfc] text-2xl sm:text-3xl leading-[40px] font-thin uppercase whitespace-nowrap'>Project Information</h1>
                 </div>
-                <section className={`w-full flex ${twoStep ? "flex-col md:flex-row" : "flex-col"} gap-16 md:gap-10 items-center relative duration-700`}>
-                    <article className={`space-y-4 lg:space-y-6 w-full`}>
+                <section className={`w-full flex ${twoStep ? "flex-col md:flex-row gap-8" : "flex-col gap-16"}  md:gap-10 items-center relative duration-700`}>
+                    <article className={`space-y-4 lg:space-y-7 w-full`}>
                         <div className={`relative`}>
                             <input type="text" required="required" className={styles.inputField} 
                             onChange={(e) => {dispatch({type:'updateName', data: e.target.value})}}
@@ -132,7 +136,7 @@ const Form = ({ twoStep, setTwoStep }) => {
                             >Next</button>
                         </div>
                     </article>
-                    <article className={`space-y-4 lg:space-y-6 w-full ${twoStep ? "block" : "hidden" }`}>
+                    <article className={`space-y-4 lg:space-y-7 w-full ${twoStep ? "block" : "hidden" }`}>
                         {/* Max X and Min X field */}
                         <div className='flex items-center justify-between gap-5'>
                             <div className={`relative w-1/2`}>
@@ -186,7 +190,7 @@ const Form = ({ twoStep, setTwoStep }) => {
                                 <p className="mb-2 text-sm text-[#057caf] group-hover:text-white duration-300"><span className="font-semibold ">Click to upload</span> or drag and drop</p>
                                 <p className="text-xs text-[#057caf] group-hover:text-white duration-300">{uploadButtonText}</p>
                             </div>
-                            <input onChange={(e) => handleFileChange(e.target.files[0])} id="dropzone-file" type="file" accept=".csv" className="hidden" />
+                            <input onChange={(e) => handleFileChange(e.target.files[0])} id="dropzone-file" type="file" accept=" .csv" className="hidden" />
                         </label>
                     </div>
                         <div>
