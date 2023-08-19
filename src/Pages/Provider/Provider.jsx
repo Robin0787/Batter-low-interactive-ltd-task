@@ -11,6 +11,7 @@ const initialData = {
     minY: '',
     maxZ: '',
     minZ: '',
+    X: [],
     KP: []
 }
 
@@ -67,6 +68,11 @@ const reducer = (state, action) => {
                 ...state,
                 minZ: +value
             }
+        case "X" :
+            return {
+                ...state,
+                X: value
+            };
         case 'KP' :
             return {
                 ...state,

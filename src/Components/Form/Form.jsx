@@ -7,7 +7,7 @@ import { infoContext } from "../../Pages/Provider/Provider";
 import pattern from '../../assets/pattern.svg';
 import styles from "./Form.module.css";
 
-const Form = ({ twoStep, setTwoStep }) => {
+const Form = ({ twoStep, setTwoStep, setShowChart }) => {
     const [uploadButtonText, setUploadButtonText] = useState('Only CSV file accepted.');
     const {allInfo, dispatch} = useContext(infoContext);
     const navigate = useNavigate();
@@ -65,7 +65,10 @@ const Form = ({ twoStep, setTwoStep }) => {
 
                 dispatch({type: 'max_z', data: max_z});
                 dispatch({type: 'min_z', data: min_z});
-                dispatch({type: 'KP', data: kp})
+
+                dispatch({type:'X', data: x});
+                dispatch({type: 'KP', data: kp});
+                setShowChart(true);
             }
         })
     };

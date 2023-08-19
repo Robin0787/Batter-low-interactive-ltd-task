@@ -33,7 +33,7 @@ const Result = () => {
                                     <tr>
                                         <th
                                             scope="col"
-                                            className="px-6 py-4  text-sm font-medium  uppercase tracking-wider rounded-tl-md"
+                                            className="px-6 py-4 text-sm font-medium  uppercase tracking-wider rounded-tl-md"
                                         >
                                             Project Name
                                         </th>
@@ -86,38 +86,38 @@ const Result = () => {
                                             {allInfo?.maxZ}
                                         </td>
                                     </tr>
-                                    <tr className="bg-[#20495c] text-white text-center">
-                                        <th
+                                    <tr className="bg-[#20495c] text-white text-center text-sm ">
+                                        <td
                                             scope="col"
                                             className="px-6 py-4  font-medium  uppercase tracking-wider "
                                         >
                                             Max_X
-                                        </th>
-                                        <th
+                                        </td>
+                                        <td
                                             scope="col"
                                             className="px-6 py-4  font-medium  uppercase tracking-wider"
                                         >
                                             Min_X
-                                        </th>
-                                        <th
+                                        </td>
+                                        <td
                                             scope="col"
                                             className="px-6 py-4  font-medium  uppercase tracking-wider"
                                         >
                                             Max_Y
-                                        </th>
-                                        <th
+                                        </td>
+                                        <td
                                             scope="col"
                                             className="px-6 py-4  font-medium  uppercase tracking-wider"
                                         >
                                             Min_Y
-                                        </th>
+                                        </td>
                                         
-                                        <th
+                                        <td
                                             scope="col"
                                             className="px-6 py-4  font-medium  uppercase tracking-wider"
                                         >
                                             Min_Z
-                                        </th>
+                                        </td>
                                     </tr>
                                     <tr className="text-gray-300 text-center text-base">
                                         <td className="px-6 py-4 whitespace-nowrap  rounded-bl-md">
@@ -139,72 +139,6 @@ const Result = () => {
                                 </tbody>
                             </table>
                         </div>
-                        {/* <div className="w-full overflow-x-auto ">
-                            <table className="min-w-full rounded-md">
-                                <thead className="bg-[#20495c] text-white rounded-md text-center text-[12px]">
-                                    <tr>
-                                        <th
-                                            scope="col"
-                                            className="px-6 py-4  font-medium  uppercase tracking-wider "
-                                        >
-                                            Max_X
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="px-6 py-4  font-medium  uppercase tracking-wider"
-                                        >
-                                            Min_X
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="px-6 py-4  font-medium  uppercase tracking-wider"
-                                        >
-                                            Max_Y
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="px-6 py-4  font-medium  uppercase tracking-wider"
-                                        >
-                                            Min_Y
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="px-6 py-4  font-medium  uppercase tracking-wider"
-                                        >
-                                            Max_Z
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="px-6 py-4  font-medium  uppercase tracking-wider"
-                                        >
-                                            Min_Z
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody className="bg-[#24709160] text-gray-300 rounded-lg text-center text-[12px]">
-                                    <tr>
-                                        <td className="px-6 py-4 whitespace-nowrap  rounded-bl-md">
-                                            {allInfo?.maxX}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap ">
-                                            {allInfo?.minX}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap">
-                                            {allInfo?.maxY}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap">
-                                            {allInfo?.minY}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap">
-                                            {allInfo?.maxZ}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap rounded-br-md">
-                                            {allInfo?.minZ}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div> */}
                     </section>
                 </section>
             </section>
