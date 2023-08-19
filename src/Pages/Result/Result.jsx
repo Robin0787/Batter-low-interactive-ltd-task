@@ -10,7 +10,6 @@ const Result = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log(allInfo);
         if(!allInfo) {
             console.log('Please write data first!');
             navigate('/');
