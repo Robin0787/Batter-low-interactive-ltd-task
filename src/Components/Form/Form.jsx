@@ -94,7 +94,6 @@ const Form = ({ twoStep, setTwoStep, setShowChart }) => {
             toast.error('MIN_Z is required');
         }
         else {
-            toast.success('Everything is ok');
             localStorage.setItem('allInfo', JSON.stringify(allInfo));
             navigate('/result');
         }
@@ -103,7 +102,7 @@ const Form = ({ twoStep, setTwoStep, setShowChart }) => {
     return (
         <section className={`${twoStep ? "w-full" : "w-full md:w-2/3 lg:w-1/2 md:py-5"} h-full duration-500 `} style={{ backgroundImage: `url(${pattern})` }}>
             <section className={`overflow-hidden bg-black bg-opacity-50 h-full rounded-xl ring-2 ring-[#38bdf830] py-10 px-6 sm:p-10 md:p-10 lg:p-10`}>
-                <div className='mb-10 lg:mb-14 mt-5'>
+                <div className='mb-10 lg:mb-10 mt-5'>
                     <h1 className='text-center text-[#5acbfc] text-2xl sm:text-3xl leading-[40px] font-thin uppercase whitespace-nowrap'>Project Information</h1>
                 </div>
                 <section className={`w-full flex ${twoStep ? "flex-col md:flex-row gap-8" : "flex-col gap-16"}  md:gap-10 items-center relative duration-700`}>

@@ -1,11 +1,23 @@
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import pattern from '../../assets/pattern.svg';
 
 const Result = () => {
     const [showFullDesc, setShowFullDesc] = useState(false);
     const allInfo = JSON.parse(localStorage.getItem("allInfo"));
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        console.log(allInfo);
+        if(!allInfo) {
+            console.log('Please write data first!');
+            navigate('/');
+        }
+    });
+
+    
 
     const downloadResult = async () => {
         const doc = new jsPDF({orientation: 'landscape'});
@@ -76,10 +88,10 @@ const Result = () => {
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap text-base">
                                             {allInfo?.description.length > 20 ? (
-                                                showFullDesc ? allInfo.description :
-                                                    allInfo.description.slice(0, 20)
-                                            ) : allInfo.description}
-                                            {allInfo.description.length > 20 && <span className='cursor-pointer opacity-60'
+                                                showFullDesc ? allInfo?.description :
+                                                    allInfo?.description.slice(0, 20)
+                                            ) : allInfo?.description}
+                                            {allInfo?.description.length > 20 && <span className='cursor-pointer opacity-60'
                                                 onClick={() => { setShowFullDesc(!showFullDesc) }}>{showFullDesc ? " ...see less" : ' ...see more'}</span>}
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap">
